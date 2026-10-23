@@ -130,8 +130,13 @@ textarea {
 .btn--ghost:hover {
   border-color: var(--ink);
 }
-.btn:active {
+.btn:active:not(:disabled) {
   transform: translateY(1px);
+}
+.btn:disabled {
+  background: #e4e7ec;
+  color: var(--text-2);
+  cursor: not-allowed;
 }
 .actions {
   display: flex;
