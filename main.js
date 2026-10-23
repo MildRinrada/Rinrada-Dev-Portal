@@ -1,7 +1,7 @@
 // Rinrada-Dev portal: full-size screenshot viewer, the mail form, and a light fade-in on scroll.
 // Without it the page still reads in full and the form falls back to mailto.
 
-const EMAIL = 'you@example.com';
+const EMAIL = 'mildppgd@gmail.com';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Click a screenshot to see it whole.
