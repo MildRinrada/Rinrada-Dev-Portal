@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rinrada-Dev — ระบบงานสำหรับองค์กรไทย</title>
+  <meta name="description" content="ระบบลงทะเบียนและเกียรติบัตร ระบบเทียบราคาและใบเสนอราคา และระบบคลินิกสัตว์ ติดตั้งแยกให้แต่ละองค์กร ข้อมูลอยู่ในระบบของคุณเอง">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;700&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#systems">ข้ามไปที่ระบบทั้งหมด</a>
+
+  <!-- First screen: the board itself. Name, what this is, two real screens, one sentence, one action. -->
+  <header class="board hero">
+    <a class="tile tile--ink hero__mark" href="#top" aria-label="Rinrada-Dev หน้าแรก">R</a>
+    <nav class="tile hero__nav" aria-label="เมนูหลัก">
+      <a href="#systems">ระบบ</a>
+      <a href="#how">วิธีทำงาน</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
+    <a class="tile tile--ink hero__act" href="#contact">ขอดูเดโม</a>
+
+    <div class="tile hero__name" id="top">
+      <h1>
+        <span class="wordmark">Rinrada-Dev</span>
+        <span class="hero__what">ระบบงานภาษาไทย ติดตั้งแยกให้แต่ละองค์กร</span>
+      </h1>
+    </div>
+    <figure class="tile tile--pic hero__pic hero__pic--a" data-shutter>
+      <img src="assets/shots/qrems-dashboard.webp" width="1800" height="1125" alt="หน้าภาพรวมของระบบลงทะเบียน: ใบลงชื่อแสดงคนที่เช็คอินแล้วแต่ละช่วง และรายชื่อเช็คอินล่าสุด">
+    </figure>
+    <figure class="tile tile--pic hero__pic hero__pic--b">
+      <img src="assets/shots/spcs-builder.webp" width="1800" height="1133" alt="ตัวสร้างใบเสนอราคา: เทียบราคาสามซัพพลายเออร์ใต้บรรทัดสินค้า พร้อม margin และ markup">
+    </figure>
+    <p class="tile tile--ink hero__say">สามระบบที่ใช้งานได้จริง สำหรับงานอบรม ร้านขายส่งให้องค์กร และคลินิกสัตว์</p>
+    <a class="tile tile--mint hero__try" href="https://qrems-demo.vercel.app">
+      <span>ลองเดโมระบบลงทะเบียนได้เลย ไม่ต้องสมัคร</span>
+      <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+    </a>
+  </header>
+
+  <main>
+    <!-- Every system as one strip of its own screens. -->
+    <section class="work" id="systems" aria-labelledby="systems-h">
+      <div class="work__rail">
+        <h2 id="systems-h">ระบบ</h2>
+        <div class="work__filters" role="group" aria-label="กรองระบบ">
+          <button type="button" aria-pressed="true" data-filter="all">ทั้งหมด</button>
+          <button type="button" aria-pressed="false" data-filter="live">มีเดโมออนไลน์</button>
+        </div>
+      </div>
+      <ul class="work__list">
+        <li class="strip" data-live="yes">
+          <a href="#qrems" aria-label="ระบบลงทะเบียน เช็คอิน QR และเกียรติบัตร: ดูรายละเอียด">
+            <span class="strip__frames">
+              <img src="assets/shots/qrems-event.webp" width="1800" height="1125" alt="" loading="lazy">
+              <img src="assets/shots/qrems-ticket.webp" width="780" height="1688" alt="" loading="lazy">
+              <img src="assets/shots/qrems-scan.webp" width="780" height="1688" alt="" loading="lazy">
+              <img src="assets/shots/qrems-designer.webp" width="1800" height="1125" alt="" loading="lazy">
+              <img src="assets/shots/qrems-participants.webp" width="1800" height="1125" alt="" loading="lazy">
+            </span>
+            <span class="strip__line">
+              <span>ระบบลงทะเบียน เช็คอิน QR และเกียรติบัตร</span>
+              <span class="strip__kind">งานอบรม สัมมนา</span>
+              <span>เดโมออนไลน์</span>
+            </span>
+          </a>
+        </li>
+        <li class="strip" data-live="no">
+          <a href="#spcs" aria-label="ระบบเทียบราคาซัพพลายเออร์และใบเสนอราคา: ดูรายละเอียด">
+            <span class="strip__frames">
+              <img src="assets/shots/spcs-dashboard.webp" width="1800" height="1133" alt="" loading="lazy">
+              <img src="assets/shots/spcs-quote-pdf.webp" width="1588" height="2244" alt="" loading="lazy">
+              <img src="assets/shots/spcs-import-review.webp" width="1800" height="1243" alt="" loading="lazy">
+              <img src="assets/shots/spcs-send-warnings.webp" width="1152" height="732" alt="" loading="lazy">
+              <img src="assets/shots/spcs-product.webp" width="1800" height="1807" alt="" loading="lazy">
+            </span>
+            <span class="strip__line">
+              <span>ระบบเทียบราคาซัพพลายเออร์และใบเสนอราคา</span>
+              <span class="strip__kind">ร้านขายส่งให้องค์กร</span>
+              <span>สาธิตตามนัด</span>
+            </span>
+          </a>
+        </li>
+        <li class="strip" data-live="no">
+          <a href="#paws" aria-label="ระบบคลินิกสัตว์ Happy Paws: ดูรายละเอียด">
+            <span class="strip__frames">
+              <img src="assets/shots/paws-home.webp" width="1440" height="900" alt="" loading="lazy">
+              <img src="assets/shots/paws-booking.webp" width="1440" height="1000" alt="" loading="lazy">
+              <img src="assets/shots/paws-queue-board.webp" width="1440" height="900" alt="" loading="lazy">
+              <img src="assets/shots/paws-calendar.webp" width="1440" height="900" alt="" loading="lazy">
+              <img src="assets/shots/paws-pet-record.webp" width="1440" height="900" alt="" loading="lazy">
+            </span>
+            <span class="strip__line">
+              <span>ระบบคลินิกสัตว์ Happy Paws</span>
+              <span class="strip__kind">คลินิกสัตวแพทย์</span>
+              <span>สาธิตตามนัด</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- QREMS: the one with a live demo. -->
+    <section class="board sys sys--qrems" id="qrems" aria-labelledby="qrems-h">
+      <div class="tile sys__title" style="--c:1/5;--r:1/span 2">
+        <h2 id="qrems-h">ลงทะเบียนและเกียรติบัตร</h2>
+        <p>สำหรับผู้จัดงานอบรมและสัมมนา ตั้งแต่เปิดรับสมัครจนส่งเกียรติบัตรที่ใครก็ตรวจสอบได้</p>
+      </div>
+      <figure class="tile tile--pic" style="--c:5/13;--r:1/span 5">
+        <video src="assets/shots/qrems-typing.webm" poster="assets/shots/qrems-typing.webp" width="1280" height="800" muted loop playsinline autoplay preload="metadata" aria-label="พิมพ์ชื่อในฟอร์มลงทะเบียน แล้วชื่อขึ้นบนเกียรติบัตรตัวอย่างทันที"></video>
+      </figure>
+      <p class="tile fact" style="--c:1/5;--r:3">เกียรติบัตรออกให้เฉพาะคนที่เช็คอินครบตามจำนวนช่วงที่ผู้จัดกำหนด</p>
+      <p class="tile fact" style="--c:1/5;--r:4">อาสาสมัครสแกนด้วยลิงก์ที่ผูกกับงานเดียวและหมดอายุเอง ไม่ต้องมีบัญชี</p>
+      <a class="tile tile--mint act" style="--c:1/5;--r:5" href="https://qrems-demo.vercel.app">
+        <span>ลองเดโม qrems-demo.vercel.app</span>
+        <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+      </a>
+      <figure class="tile tile--pic tile--phone" style="--c:1/4;--r:6/span 4;--pc:span 1">
+        <img src="assets/shots/qrems-ticket.webp" width="780" height="1688" alt="บัตร QR บนมือถือ พร้อมรหัส 6 ตัวสำหรับพิมพ์แทนการสแกน" loading="lazy">
+      </figure>
+      <figure class="tile tile--pic tile--phone" style="--c:4/7;--r:6/span 4;--pc:span 1">
+        <img src="assets/shots/qrems-scan.webp" width="780" height="1688" alt="ผลสแกนเต็มจอสีเขียว ผ่าน พร้อมชื่อผู้เข้าร่วมและช่วงที่เช็คอิน" loading="lazy">
+      </figure>
+      <figure class="tile tile--pic" style="--c:7/13;--r:6/span 3">
+        <img src="assets/shots/qrems-designer.webp" width="1800" height="1125" alt="หน้าออกแบบเกียรติบัตร ลากข้อความบนแผ่นเพื่อจัดตำแหน่ง" loading="lazy">
+      </figure>
+      <p class="tile fact" style="--c:7/10;--r:9">ทุกใบมีเลขที่และ QR ตรวจสอบ เพิกถอนและออกใหม่ได้</p>
+      <div class="tile tile--ink stack" style="--c:10/13;--r:9">
+        <p>NestJS · PostgreSQL · PDF ฟอนต์ไทยผ่าน Gotenberg · Docker</p>
+      </div>
+    </section>
+
+    <!-- Supplier price comparison: the live thing is its own pricing rule. -->
+    <section class="board sys sys--spcs" id="spcs" aria-labelledby="spcs-h">
+      <figure class="tile tile--pic" style="--c:1/9;--r:1/span 5">
+        <img src="assets/shots/spcs-builder.webp" width="1800" height="1133" alt="ตัวสร้างใบเสนอราคา: ระบบเลือกซัพพลายเออร์ที่ต้นทุนจริงถูกสุด และเตือนเมื่อกำไรต่ำกว่าเกณฑ์" loading="lazy">
+      </figure>
+      <div class="tile sys__title" style="--c:9/13;--r:1/span 2">
+        <h2 id="spcs-h">เทียบราคาและใบเสนอราคา</h2>
+        <p>สำหรับร้านซื้อมาขายไปที่ขายให้องค์กร ตั้งกำไรต่อบรรทัดโดยไม่พลาด แล้วจบด้วย PDF และ Excel</p>
+      </div>
+      <form class="tile tile--mint calc" style="--c:9/13;--r:3/span 3" aria-labelledby="calc-h" data-calc>
+        <h3 id="calc-h">ลองตั้งราคาแบบในระบบ</h3>
+        <div class="calc__fields">
+          <label>ต้นทุนต่อหน่วย (บาท)
+            <input name="cost" inputmode="decimal" value="1579.44" autocomplete="off">
+          </label>
+          <label>ตั้งกำไร
+            <select name="mode">
+              <option value="markup">Markup %</option>
+              <option value="margin">Margin %</option>
+            </select>
+          </label>
+          <label>เปอร์เซ็นต์
+            <input name="pct" inputmode="decimal" value="20" autocomplete="off">
+          </label>
+        </div>
+        <output class="calc__out" name="out" aria-live="polite">
+          ราคาขาย <b data-price>1,895.33</b> บาท · markup <b data-markup>20.00%</b> คือ margin <b data-margin>16.67%</b>
+        </output>
+      </form>
+      <figure class="tile tile--pic tile--tall" style="--c:1/4;--r:6/span 4">
+        <img src="assets/shots/spcs-quote-pdf.webp" width="1588" height="2244" alt="ใบเสนอราคา PDF ภาษาไทย มีจำนวนเงินเป็นตัวอักษรและวันที่ พ.ศ." loading="lazy">
+      </figure>
+      <p class="tile fact" style="--c:4/8;--r:6">ต้นทุนจริงรวมค่าส่งเฉลี่ย ราคาที่ดูถูกกว่าอาจแพงกว่าเมื่อรวมค่าส่ง</p>
+      <p class="tile fact" style="--c:4/8;--r:7">ฝ่ายขายที่ไม่มีสิทธิ์ ไม่ได้รับตัวเลขต้นทุนจากเซิร์ฟเวอร์เลย ไม่ใช่แค่ซ่อนบนจอ</p>
+      <p class="tile fact" style="--c:4/8;--r:8">ตัวหนังสือ 17px ปุ่มสูง 44px และปรับขนาดตัวอักษรได้สามระดับ</p>
+      <div class="tile tile--ink stack" style="--c:4/8;--r:9">
+        <p>Go · Next.js · PostgreSQL · PDF ด้วย Chrome</p>
+      </div>
+      <figure class="tile tile--pic" style="--c:8/13;--r:6/span 3">
+        <img src="assets/shots/spcs-import-review.webp" width="1800" height="1243" alt="หน้านำเข้า Excel ตรวจทุกแถวก่อนบันทึก" loading="lazy">
+      </figure>
+      <a class="tile act act--quiet" style="--c:8/13;--r:9" href="mailto:you@example.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%94%E0%B8%B9%E0%B9%80%E0%B8%94%E0%B9%82%E0%B8%A1%20%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2">
+        <span>นัดดูเดโมระบบนี้ทางอีเมล</span>
+        <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+      </a>
+    </section>
+
+    <!-- Happy Paws: the clinic day, and the one real figure it carries. -->
+    <section class="board sys sys--paws" id="paws" aria-labelledby="paws-h">
+      <div class="tile sys__title" style="--c:1/6;--r:1/span 2">
+        <h2 id="paws-h">ระบบคลินิกสัตว์ Happy Paws</h2>
+        <p>หน้าเว็บคลินิกและจองนัดออนไลน์ ไปจนถึงคิวเรียลไทม์ ปฏิทินนัด และทะเบียนลูกค้ากับสัตว์เลี้ยง</p>
+      </div>
+      <figure class="tile tile--pic" style="--c:6/13;--r:1/span 4">
+        <img src="assets/shots/paws-home.webp" width="1440" height="900" alt="หน้าแรกของเว็บคลินิก พร้อมกล่องเวลาว่างเร็วสุดของวันนี้" loading="lazy">
+      </figure>
+      <div class="tile tile--mint figure" style="--c:1/4;--r:3/span 2">
+        <p class="figure__n">766</p>
+        <p>ชุดทดสอบอัตโนมัติ รันกับฐานข้อมูลจริง</p>
+      </div>
+      <p class="tile fact" style="--c:4/6;--r:3/span 2">จองนัดโดยไม่ต้องสมัคร ยืนยันด้วยรหัส OTP ทางโทรศัพท์</p>
+      <figure class="tile tile--pic" style="--c:1/8;--r:5/span 4">
+        <img src="assets/shots/paws-queue-board.webp" width="1440" height="900" alt="กระดานคิววันนี้ แยกรอเรียก กำลังเรียก และในห้องตรวจ" loading="lazy">
+      </figure>
+      <p class="tile fact" style="--c:8/13;--r:5">คิวอัปเดตสดถึงจอทีวีในห้องรอ ซึ่งเห็นแค่เลขคิวและห้อง</p>
+      <p class="tile fact" style="--c:8/13;--r:6">กันนัดชนกันที่ฐานข้อมูล สองคำขอพร้อมกันจองเวลาเดียวกันไม่ได้</p>
+      <figure class="tile tile--pic" style="--c:8/13;--r:7/span 2">
+        <img src="assets/shots/paws-calendar.webp" width="1440" height="900" alt="ปฏิทินนัดรายวัน แยกคอลัมน์ตามสัตวแพทย์" loading="lazy">
+      </figure>
+      <div class="tile tile--ink stack" style="--c:1/5;--r:9">
+        <p>ASP.NET Core 10 · Next.js 15 · PostgreSQL 17</p>
+      </div>
+      <a class="tile act act--quiet" style="--c:5/9;--r:9" href="https://github.com/MildRinrada/Happy-Paws-Clinic-Demo">
+        <span>ดูโค้ดเวอร์ชันสาธิตบน GitHub</span>
+        <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+      </a>
+      <a class="tile act act--quiet" style="--c:9/13;--r:9" href="mailto:you@example.com?subject=%E0%B8%82%E0%B8%AD%E0%B8%94%E0%B8%B9%E0%B9%80%E0%B8%94%E0%B9%82%E0%B8%A1%20Happy%20Paws">
+        <span>นัดดูเดโมระบบนี้ทางอีเมล</span>
+        <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+      </a>
+    </section>
+
+    <!-- How an install goes: the same install sheet, further along in each field. -->
+    <section class="how" id="how" aria-labelledby="how-h">
+      <div class="how__field">
+        <h2 id="how-h">วิธีทำงาน</h2>
+        <div class="sheet" data-ui>
+          <p class="sheet__head">ใบติดตั้ง · ระบบลงทะเบียน</p>
+          <dl>
+            <div><dt>องค์กร</dt><dd>สมาคมตัวอย่าง</dd></div>
+            <div><dt>งานต่อปี</dt><dd>ราว 40 หลักสูตร</dd></div>
+            <div><dt>โดเมน</dt><dd class="sheet__empty">ยังไม่มี</dd></div>
+            <div><dt>สถานะ</dt><dd>คุยงาน</dd></div>
+          </dl>
+        </div>
+        <p class="how__say">ก่อนอื่น คุยกันว่างานของคุณเดินอย่างไร</p>
+      </div>
+      <div class="how__field">
+        <div class="sheet" data-ui>
+          <p class="sheet__head">ใบติดตั้ง · ระบบลงทะเบียน</p>
+          <dl>
+            <div><dt>องค์กร</dt><dd>สมาคมตัวอย่าง</dd></div>
+            <div><dt>เซิร์ฟเวอร์</dt><dd>ของสมาคมเอง</dd></div>
+            <div><dt>โดเมน</dt><dd>events.example.or.th</dd></div>
+            <div><dt>สถานะ</dt><dd>ติดตั้งแล้ว</dd></div>
+          </dl>
+        </div>
+        <p class="how__say">แล้วติดตั้งแยกให้ ข้อมูลอยู่ในระบบของคุณ</p>
+      </div>
+      <div class="how__field">
+        <div class="sheet" data-ui>
+          <p class="sheet__head">ใบติดตั้ง · ระบบลงทะเบียน</p>
+          <dl>
+            <div><dt>โลโก้และสี</dt><dd>ตั้งแล้ว</dd></div>
+            <div><dt>อีเมลผู้จัด</dt><dd>ทดสอบส่งแล้ว</dd></div>
+            <div><dt>รายชื่อเดิม</dt><dd>นำเข้าจาก Excel</dd></div>
+            <div><dt>สถานะ</dt><dd>สอนทีมงาน</dd></div>
+          </dl>
+        </div>
+        <p class="how__say">จากนั้นตั้งแบรนด์ นำเข้าข้อมูล สอนทีม</p>
+      </div>
+      <div class="how__field">
+        <div class="sheet" data-ui>
+          <p class="sheet__head">ใบติดตั้ง · ระบบลงทะเบียน</p>
+          <dl>
+            <div><dt>สถานะ</dt><dd>ใช้งานจริง</dd></div>
+            <div><dt>สำรองข้อมูล</dt><dd>ทุกวัน เก็บ 14 วัน</dd></div>
+            <div><dt>อัปเดต</dt><dd>ไม่ต้องย้ายข้อมูล</dd></div>
+            <div><dt>ค่าบริการ</dt><dd>ตกลงตามขนาดงาน</dd></div>
+          </dl>
+        </div>
+        <p class="how__say">สุดท้าย ใช้งานจริง พร้อมสำรองข้อมูลทุกวัน</p>
+      </div>
+    </section>
+
+    <!-- Contact: the screens drift past; the form writes the email for you. -->
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="contact__strip" aria-hidden="true">
+        <div class="contact__run">
+          <img src="assets/shots/qrems-home.webp" width="1800" height="1125" alt="" loading="lazy">
+          <img src="assets/shots/spcs-quote-pdf.webp" width="1588" height="2244" alt="" loading="lazy">
+          <img src="assets/shots/paws-booking.webp" width="1440" height="1000" alt="" loading="lazy">
+          <img src="assets/shots/qrems-certificates.webp" width="1800" height="1125" alt="" loading="lazy">
+          <img src="assets/shots/spcs-outcome.webp" width="1152" height="748" alt="" loading="lazy">
+          <img src="assets/shots/paws-pet-record.webp" width="1440" height="900" alt="" loading="lazy">
+          <img src="assets/shots/qrems-ticket.webp" width="780" height="1688" alt="" loading="lazy">
+          <img src="assets/shots/spcs-sales-builder.webp" width="1800" height="1133" alt="" loading="lazy">
+          <img src="assets/shots/paws-calendar.webp" width="1440" height="900" alt="" loading="lazy">
+          <img src="assets/shots/qrems-participants.webp" width="1800" height="1125" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="contact__body">
+        <h2 id="contact-h">เล่างานของคุณให้ฟัง</h2>
+        <form class="contact__form" action="mailto:you@example.com" method="post" enctype="text/plain" data-mail>
+          <label class="cell">
+            <span class="sr">ชื่อและองค์กร</span>
+            <input name="who" placeholder="ชื่อและองค์กรของคุณ" autocomplete="organization" required>
+          </label>
+          <label class="cell">
+            <span class="sr">ระบบที่สนใจ</span>
+            <select name="system">
+              <option>ระบบลงทะเบียน เช็คอิน และเกียรติบัตร</option>
+              <option>ระบบเทียบราคาและใบเสนอราคา</option>
+              <option>ระบบคลินิกสัตว์</option>
+              <option>ระบบอื่นที่อยากให้ทำ</option>
+            </select>
+          </label>
+          <button class="cell cell--go" type="submit">เขียนอีเมลถึงเรา</button>
+        </form>
+        <p class="contact__note">ปุ่มนี้เปิดโปรแกรมอีเมลของคุณพร้อมข้อความที่กรอกไว้ หรือส่งตรงมาที่ <a href="mailto:you@example.com">you@example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: the last two rows of the board. -->
+  <footer class="board foot">
+    <div class="tile foot__say">
+      <p>ทุกระบบติดตั้งแยกให้แต่ละองค์กร ข้อมูลของคุณอยู่ในระบบของคุณเอง</p>
+      <p class="foot__legal">© 2569 Rinrada-Dev</p>
+    </div>
+    <nav class="tile foot__nav" aria-label="ลิงก์ท้ายหน้า">
+      <a href="#qrems">ระบบลงทะเบียน</a>
+      <a href="#spcs">ระบบเทียบราคา</a>
+      <a href="#paws">ระบบคลินิกสัตว์</a>
+      <a href="#how">วิธีทำงาน</a>
+    </nav>
+    <div class="tile foot__time">
+      <p>กรุงเทพฯ</p>
+      <p class="foot__clock" data-clock>GMT+7</p>
+    </div>
+    <div class="tile foot__mail">
+      <p>อีเมล</p>
+      <a href="mailto:you@example.com">you@example.com</a>
+    </div>
+    <p class="tile tile--ink foot__mark" aria-hidden="true">Rinrada-Dev</p>
+    <a class="tile tile--mint foot__try" href="https://qrems-demo.vercel.app">
+      <span>ลองเดโมตอนนี้</span>
+      <svg class="arrow" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 26 26 6M10 6h16v16"/></svg>
+    </a>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
